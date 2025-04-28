@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Мои питомцы</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Мои любимые питомцы</h1>
+        <p>Здесь живут самые милые создания 🐾</p>
+    </header>
+
+    <div class="gallery">
+        <div class="pet-card">
+            <img src="pic1.jpg" alt="Барсик" onclick="openModal('pic1.jpg', 'Барсик')">
+            <h3>Кузя</h3>
+            <p>Самый добрый и игривый кусочек.</p>
+        </div>
+        <div class="pet-card">
+            <img src="pic2.jpg" alt="Шарик" onclick="openModal('pic2.jpg', 'Шарик')">
+            <h3>Мыша</h3>
+            <p>Самый серьезный мужчина.</p>
+        </div>
+        
+        <div class="pet-card">
+            <img src="pic3.jpg" alt="Мурка" onclick="openModal('pic3.jpg', 'Мурка')">
+            <h3>Даллас</h3>
+            <p>Любимый.</p>
+        </div>
+        
+        <div class="pet-card">
+            <img src="pic4.jpg" alt="Рекс" onclick="openModal('pic4.jpg', 'Рекс')">
+            <h3>Ким</h3>
+            <p>Самый тупой дебил.</p>
+        </div>
+        
+        <div class="pet-card">
+            <img src="pic5.jpg" alt="Зефирка" onclick="openModal('pic5.jpg', 'Зефирка')">
+            <h3>Кимуся</h3>
+            <p>Самая милая и добрая сладуська.</p>
+        </div>
+    </div>
+
+    <div id="modal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modal-img">
+        <div id="caption"></div>
+    </div>
+
+    <footer>
+        <p>© 2025 Сайт о моих питомцах | С любовью ❤️</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
