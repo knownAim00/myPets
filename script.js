@@ -1,17 +1,21 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Делаем карточки более отзывчивыми на касания
-    const petCards = document.querySelectorAll('.pet-card');
-    petCards.forEach(card => {
-        card.style.cursor = 'pointer';
-        card.addEventListener('touchend', function(e) {
-            if (!e.target.matches('h3') && !e.target.matches('p')) {
-                const img = this.querySelector('img');
-                openModal(img.src, this.querySelector('h3').textContent);
-            }
-        }, {passive: true});
+    const imageContainers = document.querySelectorAll('.pet-image-container');
+    
+    imageContainers.forEach(container => {
+        container.addEventListener('click', function() {
+            const img = this.querySelector('.pet-image');
+            const petName = this.closest('.pet-card').querySelector('h3').textContent;
+            openModal(img.src, petName);
+        });
+        
+        container.addEventListener('touchend', function(e) {
+            e.preventDefault();
+            const img = this.querySelector('.pet-image');
+            const petName = this.closest('.pet-card').querySelector('h3').textContent;
+            openModal(img.src, petName);
+        }, {passive: false});
     });
 });
-
 
 function openModal(imgSrc, petName) {
     const modal = document.getElementById('modal');
@@ -27,7 +31,6 @@ function closeModal() {
     document.getElementById('modal').style.display = "none";
 }
 
-// Закрытие модального окна при клике вне изображения
 window.onclick = function(event) {
     const modal = document.getElementById('modal');
     if (event.target === modal) {
